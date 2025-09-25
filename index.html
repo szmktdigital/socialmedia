@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian - Terapias Integrativas</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* NOVA PALETA DE CORES ATUALIZADA */
+        :root {
+            --cor-principal: #3E2723; /* Marrom escuro café */
+            --cor-secundaria: #8D6E63; /* Marrom médio */
+            --cor-destaque: #D9A05B; /* Dourado/Mostarda */
+            --cor-fundo: #F7F3E9;      /* Bege Areia/Creme */
+            --cor-texto-claro: #FFFFFF;
+        }
+        /* Aplicando fontes personalizadas */
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+        /* Estilo base */
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-principal);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Efeito de transição suave */
+        .btn-custom, .therapy-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .therapy-button {
+             border-color: var(--cor-secundaria);
+             color: var(--cor-secundaria);
+        }
+        .therapy-button:hover {
+             background-color: var(--cor-secundaria);
+             color: var(--cor-texto-claro);
+             border-color: var(--cor-secundaria);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Estilos do Modal */
+        #therapy-modal {
+            transition: opacity 0.3s ease;
+        }
+        #modal-content {
+            background-color: var(--cor-fundo);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        #therapy-modal.active #modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto max-w-2xl p-4 sm:p-6 md:p-8">
+
+        <!-- Seção Hero -->
+        <header class="text-center py-10 md:py-12">
+             <div class="flex justify-center mb-8">
+                 <!-- FOTO DA LILIAN 100% CORRIGIDA -->
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpaR_2_QfNUWKMYv3zHTIck-gUUIk5Ha3IdMsNiiOqXhJeYeVfMJW3hzEJmSkvoE2GCjw&usqp=CAU" alt="[Imagem de Lilian, terapeuta integrativa]" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-xl">
+            </div>
+            <h1 class="font-cinzel text-3xl md:text-4xl font-bold text-[var(--cor-principal)] tracking-wider">
+                Reconectar-se com sua essência é autocuidado.
+            </h1>
+            <p class="font-montserrat text-base md:text-lg mt-4 text-[var(--cor-secundaria)] max-w-xl mx-auto">
+                Aromas, terapias e insights que equilibram corpo, mente e espírito.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=5566996846674&text=Ol%C3%A1%2C%20Lilian!%20Gostaria%20de%20descobrir%20meu%20aroma%20ideal." target="_blank" class="btn-custom mt-8 inline-block bg-[var(--cor-principal)] text-[var(--cor-texto-claro)] font-bold py-3 px-10 rounded-full shadow-lg hover:bg-opacity-90 tracking-wide">
+                DESCUBRA SEU AROMA
+            </a>
+        </header>
+
+        <!-- Blocos de Serviços -->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
+            
+            <div class="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md text-center flex flex-col justify-between">
+                <div>
+                    <h2 class="font-playfair text-2xl font-bold text-[var(--cor-principal)] mb-3">Blends Personalizados</h2>
+                    <p class="mb-6 text-sm text-[var(--cor-secundaria)]">
+                        Crio combinações exclusivas de óleos essenciais para sua necessidade do momento: relaxamento, foco, clareza ou autocuidado.
+                    </p>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=5566996846674&text=Ol%C3%A1%2C%20Lilian!%20Tenho%20interesse%20em%20um%20blend%20personalizado." target="_blank" class="btn-custom inline-block bg-[var(--cor-destaque)] text-[var(--cor-principal)] font-semibold py-2 px-6 rounded-full self-center">
+                    Quero meu blend
+                </a>
+            </div>
+
+            <div class="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md text-center flex flex-col justify-between">
+                 <div>
+                    <h2 class="font-playfair text-2xl font-bold text-[var(--cor-principal)] mb-3">Produtos Prontos</h2>
+                    <p class="mb-6 text-sm text-[var(--cor-secundaria)]">
+                        Se prefere praticidade, conheça o catálogo da marca com fórmulas já preparadas com o mesmo cuidado e intenção.
+                    </p>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=5566996846674&text=Ol%C3%A1%2C%20Lilian!%20Gostaria%20de%20ver%20o%20cat%C3%A1logo%20de%20produtos." target="_blank" class="btn-custom inline-block bg-[var(--cor-destaque)] text-[var(--cor-principal)] font-semibold py-2 px-6 rounded-full self-center">
+                    Ver catálogo
+                </a>
+            </div>
+
+            <div class="bg-white/70 backdrop-blur-sm p-8 rounded-2xl shadow-md text-center flex flex-col justify-between md:col-span-2">
+                <div>
+                    <h2 class="font-playfair text-2xl font-bold text-[var(--cor-principal)] mb-4">Terapias Energéticas</h2>
+                    <p class="mb-6 text-sm text-[var(--cor-secundaria)]">Clique em uma terapia para saber mais e agendar sua sessão.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3 text-sm">
+                    <button class="therapy-button border py-2 px-5 rounded-full cursor-pointer" data-therapy="reiki">Reiki</button>
+                    <button class="therapy-button border py-2 px-5 rounded-full cursor-pointer" data-therapy="taro">Tarô Terapêutico</button>
+                    <button class="therapy-button border py-2 px-5 rounded-full cursor-pointer" data-therapy="leitura">Leitura de Gravação</button>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Seção E-book Gratuito -->
+        <section id="ebook-gratuito" class="relative text-white rounded-2xl shadow-lg overflow-hidden my-12 text-center flex flex-col items-center justify-center p-10 min-h-[400px]">
+            <div class="absolute inset-0 bg-black/50 z-10"></div>
+            <!-- BANNER DO E-BOOK GRATUITO CORRIGIDO -->
+            <img src="https://d3p3fw3rutb1if.cloudfront.net/photos/86ed9646-8f9f-482a-a1dc-624a0d3ebc63" class="absolute inset-0 w-full h-full object-cover" alt="[Imagem de uma mulher sentada num local tranquilo com um caderno no colo, representando o início de uma jornada]">
+            <div class="relative z-20">
+                <h3 class="font-cinzel text-sm uppercase tracking-widest">Um presente para você</h3>
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold my-3">O início da sua jornada de Autoconhecimento</h2>
+                <p class="mb-8 max-w-md mx-auto">
+                    Um guia simples e prático para começar a transformar seu bem-estar diário.
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf15AXYbxHRA-ToaAu0E8qPX2ldYq9oLLxJXrfG8YzybFmpqA/viewform?pli=1" target="_blank" class="btn-custom inline-block bg-white text-[var(--cor-principal)] font-bold py-3 px-10 rounded-full shadow-lg hover:bg-opacity-95 tracking-wide">
+                    BAIXAR E-BOOK GRATUITO
+                </a>
+            </div>
+        </section>
+        
+        <!-- Seção E-book Pago -->
+        <section id="ebook-pago" class="bg-white rounded-2xl shadow-xl overflow-hidden my-12 p-8 md:p-12">
+            <div class="text-center">
+                 <!-- IMAGEM DO E-BOOK PAGO ATUALIZADA -->
+                 <img src="https://png.pngtree.com/thumb_back/fh260/background/20230519/pngtree-person-sitting-on-the-water-meditating-with-clouds-in-the-background-image_2573507.jpg" alt="[Imagem de uma pessoa a meditar num ambiente sereno, simbolizando o autoconhecimento]" class="w-full max-w-md mx-auto mb-8 rounded-lg shadow-md">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-[var(--cor-principal)]">Desbloqueie o Poder da Sua Verdadeira Essência</h2>
+                <p class="font-cinzel text-lg mt-2 text-[var(--cor-secundaria)]">Um Guia para o Autoconhecimento</p>
+            </div>
+
+            <div class="my-10 text-center max-w-xl mx-auto text-[var(--cor-secundaria)]">
+                 <p class="text-lg">Você já se perguntou por que, mesmo com tanto esforço, parece que há algo dentro de você que ainda te impede de viver a vida dos seus sonhos?</p>
+                 <p class="mt-4">A boa notícia é que você tem o poder de transformar sua realidade.</p>
+            </div>
+            
+            <div class="bg-[var(--cor-fundo)]/80 p-6 rounded-lg my-8">
+                <h3 class="font-playfair text-2xl font-bold text-center text-[var(--cor-principal)] mb-4">O que você Vai Aprender Neste Guia</h3>
+                <div class="space-y-4 text-[var(--cor-secundaria)]">
+                    <div>
+                        <h4 class="font-bold text-[var(--cor-principal)]">Desbloquear Crenças Limitantes</h4>
+                        <p class="text-sm">Identifique e transforme crenças que te impedem de crescer e substitua a autossabotagem por autoconfiança.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-[var(--cor-principal)]">O Poder do Perdão: Libere o Peso do Passado</h4>
+                        <p class="text-sm">Técnicas para liberar ressentimentos e encontrar sua liberdade emocional.</p>
+                    </div>
+                     <div>
+                        <h4 class="font-bold text-[var(--cor-principal)]">Construindo uma Relação Saudável com Você Mesmo</h4>
+                        <p class="text-sm">Como se aceitar e se amar profundamente, sem julgamentos, para viver com mais paz e autenticidade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-10">
+                <h3 class="font-playfair text-2xl text-center font-bold text-[var(--cor-principal)] mb-6">O que as pessoas estão dizendo:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <blockquote class="bg-gray-100 p-4 rounded-lg border-l-4 border-[var(--cor-destaque)]">"Este eBook mudou a maneira como vejo a mim mesma. [...] pela primeira vez, eu consegui me perdoar de verdade."<cite class="block not-italic mt-2 font-semibold text-[var(--cor-secundaria)]">– Ana P., 34 anos</cite></blockquote>
+                    <blockquote class="bg-gray-100 p-4 rounded-lg border-l-4 border-[var(--cor-destaque)]">"Nunca pensei que o perdão fosse tão libertador. [...] posso dizer que estou em um processo de cura genuíno."<cite class="block not-italic mt-2 font-semibold text-[var(--cor-secundaria)]">– João M., 29 anos</cite></blockquote>
+                </div>
+            </div>
+
+            <div class="text-center bg-[var(--cor-principal)] text-[var(--cor-texto-claro)] p-10 rounded-2xl shadow-lg">
+                <h3 class="font-playfair text-3xl font-bold">Ofereça a si mesmo a oportunidade de transformar sua vida.</h3>
+                <p class="mt-4">Clique no botão abaixo e inicie sua jornada de autoconhecimento agora mesmo!</p>
+                <div class="my-6">
+                    <span class="text-xl line-through opacity-70">De R$97,00</span>
+                    <p class="text-4xl font-bold text-[var(--cor-destaque)]">Por R$39,90</p>
+                </div>
+                <a href="https://pay.hotmart.com/R97094028X" target="_blank" class="btn-custom inline-block bg-white text-[var(--cor-principal)] font-bold py-4 px-12 rounded-full shadow-lg hover:bg-opacity-95 text-lg tracking-wide">
+                    COMPRAR AGORA
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center mt-10 pt-8 border-t border-[var(--cor-destaque)]/30">
+             <p class="font-semibold text-base text-[var(--cor-principal)]">
+                Cuidar de si é viver no ritmo da natureza.
+             </p>
+        </footer>
+    </div>
+
+    <!-- Modal das Terapias -->
+    <div id="therapy-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 opacity-0">
+        <div id="modal-content" class="rounded-2xl shadow-2xl p-8 max-w-md w-full relative transform transition-all scale-95 opacity-0">
+            <button id="close-modal" class="absolute top-3 right-4 text-4xl font-light text-gray-500 hover:text-gray-800">&times;</button>
+            <h3 id="modal-title" class="font-playfair text-2xl font-bold text-[var(--cor-principal)] mb-4"></h3>
+            <p id="modal-description" class="mb-8 text-[var(--cor-secundaria)]"></p>
+            <a id="modal-cta" href="#" target="_blank" class="btn-custom w-full text-center bg-[var(--cor-principal)] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90">
+                Agendar Sessão
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const therapyButtons = document.querySelectorAll('.therapy-button');
+            const modal = document.getElementById('therapy-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalCta = document.getElementById('modal-cta');
+
+            const therapyData = {
+                reiki: {
+                    title: 'Reiki',
+                    description: 'O Reiki é uma terapia de canalização de energia universal que promove equilíbrio energético, relaxamento profundo e bem-estar físico e mental. Ideal para reduzir o estresse e a ansiedade.',
+                    whatsappMsg: 'Olá, Lilian! Gostaria de agendar uma sessão de Reiki.'
+                },
+                taro: {
+                    title: 'Tarô Terapêutico',
+                    description: 'O Tarô Terapêutico é uma ferramenta de autoconhecimento que utiliza os arquétipos das cartas para trazer clareza sobre questões, desafios e potenciais, guiando você em sua jornada.',
+                    whatsappMsg: 'Olá, Lilian! Gostaria de agendar uma leitura de Tarô Terapêutico.'
+                },
+                leitura: {
+                    title: 'Leitura de Gravação',
+                    description: 'A Leitura de Gravação (ou Registros Akáshicos) acessa as memórias da sua alma para compreender padrões, liberar bloqueios e encontrar respostas profundas para sua evolução pessoal e espiritual.',
+                    whatsappMsg: 'Olá, Lilian! Gostaria de agendar uma Leitura de Gravação.'
+                }
+            };
+
+            const openModal = (therapyKey) => {
+                const data = therapyData[therapyKey];
+                if (!data) return;
+                modalTitle.textContent = data.title;
+                modalDescription.textContent = data.description;
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=5566996846674&text=${encodeURIComponent(data.whatsappMsg)}`;
+                modalCta.href = whatsappUrl;
+                modal.classList.remove('hidden');
+                setTimeout(() => modal.classList.add('active', 'opacity-100'), 10);
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('opacity-100', 'active');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            };
+
+            therapyButtons.forEach(button => button.addEventListener('click', () => openModal(button.dataset.therapy)));
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+        });
+    </script>
+</body>
+</html>
+
