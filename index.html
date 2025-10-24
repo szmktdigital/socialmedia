@@ -3,279 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título e Descrição Otimizados -->
-    <title>Lilian | Terapias Integrativas | Autocuidado e Equilíbrio</title>
-    <meta name="description" content="Conecte-se com práticas que equilibram corpo, mente e emoções. Aromaterapia, Reiki, Baralho Cigano e guias para o seu bem-estar.">
-    
-    <!-- Tailwind CSS -->
+    <title>Calculadora Estratégica - SZ MKT DIGITAL</title>
+    <!-- Carrega o Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
+    <!-- Carrega a fonte Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --cor-principal: #3E2723; /* Marrom escuro café */
-            --cor-secundaria: #8D6E63; /* Marrom médio */
-            --cor-destaque: #D9A05B; /* Dourado/Mostarda */
-            --cor-fundo: #F7F3E9;      /* Bege Areia/Creme */
-            --cor-texto-claro: #FFFFFF;
-        }
-        .font-cinzel { font-family: 'Cinzel', serif; }
-        .font-playfair { font-family: 'Playfair Display', serif; }
-        .font-montserrat { font-family: 'Montserrat', sans-serif; }
-
+        /* Define a fonte Inter como padrão */
         body {
-            background-color: var(--cor-fundo);
-            color: var(--cor-principal);
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
-
-        .btn-custom, .journey-button {
-            transition: all 0.3s ease-in-out;
+        /* Remove setas do input de número */
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
-        .btn-custom:hover, .journey-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        input[type='number'] {
+            -moz-appearance: textfield;
         }
-        html {
-            scroll-behavior: smooth;
-        }
-
-        #info-modal {
-            transition: opacity 0.3s ease;
-        }
-        #modal-content {
-            background-color: var(--cor-fundo);
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        #info-modal.active #modal-content {
-            transform: scale(1);
-            opacity: 1;
-        }
-        .card {
-            background-color: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(62, 39, 35, 0.05);
+        /* Transição suave de altura e opacidade */
+        .smooth-transition {
+            transition: max-height 0.6s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-gradient-to-br from-gray-900 to-slate-800 text-gray-200">
 
-    <div class="container mx-auto max-w-2xl p-4 sm:p-6 md:p-8">
-
-        <header class="text-center py-10">
-             <div class="flex justify-center mb-8">
-                 <img src="https://i.ibb.co/L8T6tT8/lilian-photo-correct.jpg" alt="[Imagem de Lilian, terapeuta integrativa]" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-xl">
+    <!-- CABEÇALHO FIXO -->
+    <header class="sticky top-0 z-50 w-full bg-gray-900/70 backdrop-blur-lg border-b border-white/10 shadow-lg">
+        <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center sm:justify-start h-16">
+                <span class="text-2xl font-extrabold tracking-tight text-white">
+                    SZ MKT DIGITAL
+                </span>
             </div>
-            <h1 class="font-cinzel text-3xl md:text-4xl font-bold text-[var(--cor-principal)] tracking-wider">
-                Reconectar-se com sua essência é autocuidado.
-            </h1>
-            <p class="font-montserrat text-base md:text-lg mt-4 text-[var(--cor-secundaria)] max-w-xl mx-auto">
-                Conecte-se com práticas que equilibram corpo, mente e emoções.
-            </p>
-             <h2 class="font-playfair text-xl mt-8 text-[var(--cor-principal)]">
-                Escolha sua jornada.
-            </h2>
-        </header>
+        </div>
+    </header>
 
-        <main class="space-y-6 my-10">
-            
-            <div class="card p-6 rounded-2xl shadow-md text-center flex flex-col items-center">
-                <h3 class="font-playfair text-2xl font-bold text-[var(--cor-principal)]">Blends</h3>
-                <p class="mt-2 mb-4 text-sm text-[var(--cor-secundaria)] max-w-xs">Aromaterapia prática para seu equilíbrio diário.</p>
-                <button data-journey="blends" class="journey-button btn-custom inline-block bg-[var(--cor-destaque)] text-[var(--cor-principal)] font-semibold py-2 px-8 rounded-full">Saber Mais</button>
-            </div>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="pt-12 pb-24 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto max-w-2xl">
 
-             <div class="card p-6 rounded-2xl shadow-md text-center flex flex-col items-center">
-                <h3 class="font-playfair text-2xl font-bold text-[var(--cor-principal)]">Linha Terapêutica</h3>
-                <p class="mt-2 mb-4 text-sm text-[var(--cor-secundaria)] max-w-xs">Produtos que cuidam do corpo e da mente.</p>
-                <a href="https://api.whatsapp.com/send?phone=5566996846674&text=Ol%C3%A1%2C%20Lilian!%20Gostaria%20de%20conhecer%20a%20Linha%20Terap%C3%AAutica." target="_blank" class="btn-custom inline-block bg-[var(--cor-destaque)] text-[var(--cor-principal)] font-semibold py-2 px-8 rounded-full">
-                    Ver Catálogo
-                </a>
-            </div>
+            <!-- [AIDA: Atenção e Interesse] -->
+            <section class="text-center mb-10">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Sua marca merece mais que posts comuns.
+                </h1>
+                <p class="mt-4 text-lg text-slate-300 max-w-xl mx-auto">
+                    Transforme seguidores em clientes com conteúdo que <span class="text-blue-400 font-semibold">conecta</span>. 
+                    Monte seu plano estratégico e descubra o poder da sua presença online.
+                </p>
+            </section>
 
-            <div class="card p-6 rounded-2xl shadow-md text-center flex flex-col items-center">
-                <h3 class="font-playfair text-2xl font-bold text-[var(--cor-principal)]">Terapias Energéticas</h3>
-                <p class="mt-2 mb-4 text-sm text-[var(--cor-secundaria)] max-w-xs">Reiki & Leitura do Baralho Cigano.</p>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <button data-journey="reiki" class="journey-button btn-custom inline-block bg-white border border-[var(--cor-secundaria)] text-[var(--cor-secundaria)] font-semibold py-2 px-6 rounded-full">Reiki</button>
-                    <button data-journey="baralho-cigano" class="journey-button btn-custom inline-block bg-white border border-[var(--cor-secundaria)] text-[var(--cor-secundaria)] font-semibold py-2 px-6 rounded-full">Baralho Cigano</button>
-                </div>
-            </div>
-
-            <div class="card p-6 rounded-2xl shadow-md text-center flex flex-col items-center">
-                <h3 class="font-playfair text-2xl font-bold text-[var(--cor-principal)]">E-book Gratuito</h3>
-                <p class="mt-2 mb-4 text-sm text-[var(--cor-secundaria)] max-w-xs">Um guia simples e prático para começar a transformar seu bem-estar diário.</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf15AXYbxHRA-ToaAu0E8qPX2ldYq9oLLxJXrfG8YzybFmpqA/viewform?pli=1" target="_blank" class="btn-custom inline-block bg-[var(--cor-destaque)] text-[var(--cor-principal)] font-semibold py-2 px-8 rounded-full">
-                    Baixar Agora
-                </a>
-            </div>
-            
-            <!-- Card do E-book Pago com Destaque -->
-            <div class="card p-6 rounded-2xl shadow-md text-center flex flex-col items-center bg-white/90 relative">
-                 <span class="absolute top-0 right-4 -mt-3 bg-[var(--cor-principal)] text-white text-xs font-bold px-3 py-1 rounded-full">Guia Completo</span>
-                <h3 class="font-playfair text-2xl font-bold text-[var(--cor-principal)]">Guia de Autoconhecimento</h3>
-                <p class="mt-2 mb-4 text-sm text-[var(--cor-secundaria)] max-w-xs">Desbloqueie o poder da sua verdadeira essência.</p>
-                <button data-journey="ebook-pago" class="journey-button btn-custom inline-block bg-[var(--cor-principal)] text-[var(--cor-texto-claro)] font-semibold py-2 px-8 rounded-full">
-                    Conhecer Guia
-                </button>
-            </div>
-
-        </main>
-
-        <!-- SEÇÃO SOBRE MIM -->
-        <section id="sobre-mim" class="card p-8 rounded-2xl shadow-md flex flex-col sm:flex-row items-center text-center sm:text-left gap-6 my-12">
-            <img src="https://i.ibb.co/L8T6tT8/lilian-photo-correct.jpg" alt="[Imagem de Lilian, terapeuta integrativa]" class="w-24 h-24 rounded-full object-cover flex-shrink-0">
-            <div>
-                 <h3 class="font-playfair text-2xl font-bold text-[var(--cor-principal)]">Olá, sou a Lilian</h3>
-                 <p class="mt-2 text-[var(--cor-secundaria)] text-sm">Acredito que cuidar de si é alinhar-se ao ritmo da natureza e escolher o que faz sentido para corpo e alma. Minha missão é guiar você nessa jornada de reconexão.</p>
-            </div>
-        </section>
-
-        <footer class="text-center mt-10 pt-8 border-t border-[var(--cor-destaque)]/30">
-             <p class="font-semibold text-base text-[var(--cor-principal)]">
-                Cuidar de si é viver no ritmo da natureza.
-             </p>
-        </footer>
-    </div>
-
-    <!-- MODAL INFORMATIVO GERAL -->
-    <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center p-4 z-50 opacity-0">
-        <div id="modal-content" class="rounded-2xl shadow-2xl p-6 md:p-8 max-w-2xl w-full relative transform transition-all scale-95 opacity-0 max-h-[90vh] overflow-y-auto">
-            <button id="close-modal" class="sticky top-2 left-full -translate-x-10 text-4xl font-light text-gray-500 hover:text-gray-800 z-10">&times;</button>
-            
-            <!-- Conteúdos dos Modais (Blends, Reiki, Baralho, Ebook Pago) -->
-            <!-- ... (O conteúdo detalhado de cada modal permanece aqui) ... -->
-            
-             <!-- Conteúdo dos Blends -->
-            <div id="blends-content" class="hidden text-[var(--cor-secundaria)] space-y-4">
-                 <h3 class="font-playfair text-3xl font-bold text-[var(--cor-principal)] mb-4">Blends de Aromaterapia</h3>
-                <p>Pequenos frascos que unem ciência, natureza e intenção terapêutica para trazer equilíbrio e bem-estar.</p>
-                <div>
-                    <h4 class="font-playfair text-xl font-bold text-[var(--cor-principal)] mt-6 mb-2">Como Funcionam</h4>
-                    <p class="text-sm">Ao inalar um blend, as moléculas aromáticas enviam sinais ao sistema límbico — a área do cérebro ligada às emoções e memória, ajudando a regular o estresse e a promover o equilíbrio.</p>
-                </div>
-                <div class="bg-[var(--cor-fundo)]/80 p-6 rounded-lg my-6">
-                    <h4 class="font-playfair text-xl font-bold text-center text-[var(--cor-principal)] mb-4">Benefícios</h4>
-                     <ul class="text-sm space-y-2">
-                        <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-pulse-fill text-[var(--cor-destaque)]" viewBox="0 0 16 16"><path d="M1.475 9.023a.5.5 0 0 1 .679-.176l1.818.81a.5.5 0 0 1 .364.364l.81 1.818a.5.5 0 0 1-.176.678l-4.5 2.5a.5.5 0 0 1-.642-.642l2.5-4.5Z"/><path d="M8.867 3.402a.5.5 0 0 1 .678.176l1.818.81a.5.5 0 0 1 .364.364l.81 1.818a.5.5 0 0 1-.176.678l-2.5 4.5a.5.5 0 0 1-.642-.642l.636-1.137-.636-1.137a.5.5 0 0 1 .176-.678l1.137-.636-1.137-.636a.5.5 0 0 1-.176-.678l-.81-1.818a.5.5 0 0 1-.364-.364l-1.818-.81a.5.5 0 0 1 .176-.678Z"/><path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314Z"/></svg><span>Reduz estresse e ansiedade</span></li>
-                        <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill text-[var(--cor-destaque)]" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278Z"/><path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162h1.234a.217.217 0 0 1 .152.373l-.986.756.39 1.162a.217.217 0 0 1-.316.245l-.986-.756-.986.756a.217.217 0 0 1-.316-.245l.39-1.162-.986-.756a.217.217 0 0 1 .152-.373h1.234l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774h.823a.145.145 0 0 1 .101.25l-.625.485.26.774a.145.145 0 0 1-.214.164l-.625-.485-.625.485a.145.145 0 0 1-.214-.164l.26-.774-.625-.485a.145.145 0 0 1 .101-.25h.823l.258-.774z"/></svg><span>Auxilia no sono e relaxamento</span></li>
-                        <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightbulb-fill text-[var(--cor-destaque)]" viewBox="0 0 16 16"><path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z"/></svg><span>Apoia o foco e a clareza mental</span></li>
-                    </ul>
-                    <a href="https://api.whatsapp.com/send?phone=5566996846674&text=Ol%C3%A1%2C%20Lilian!%20Gostaria%20de%20saber%20mais%20sobre%20os%20Blends." target="_blank" class="btn-custom mt-6 inline-block bg-[var(--cor-principal)] text-white font-semibold py-2 px-6 rounded-full text-sm">Quero meu Blend</a>
-                </div>
-            </div>
-
-            <div id="reiki-content" class="hidden text-[var(--cor-secundaria)] space-y-4">
-                 <h3 class="font-playfair text-3xl font-bold text-[var(--cor-principal)] mb-2">Reiki: Restaure sua Energia</h3>
-                 <p class="text-center font-cinzel text-lg mb-4">Acalme a Mente, Desperte sua Luz Interior.</p>
-                 <p class="text-sm">Imagine receber uma corrente suave de energia que encontra o que mais precisa de atenção. Essa é a força do Reiki: uma prática que canaliza a energia vital universal para restaurar seu equilíbrio.</p>
-                 
-                <div class="bg-[var(--cor-fundo)]/80 p-6 rounded-lg my-6">
-                    <h4 class="font-playfair text-xl font-bold text-center text-[var(--cor-principal)] mb-4">Benefícios em Destaque</h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-                        <span class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-check text-[var(--cor-destaque)]" viewBox="0 0 16 16"><path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.95-1.73-2.03-3.26-3.843-4.33a61.44 61.44 0 0 0-2.837-.855A1.086 1.086 0 0 0 5.338 1.59zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>Reduz estresse e ansiedade</span>
-                        <span class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-battery-charging text-[var(--cor-destaque)]" viewBox="0 0 16 16"><path d="M9.585 2.568a.5.5 0 0 1 .226.58L8.677 8.25a.5.5 0 0 1-.942-.333l1.133-3.961a.5.5 0 0 1 .717-.42Z"/><path d="M11.5 6H15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H11.5v-3Z"/><path d="M2 4h4.333L7.733 11H3.5a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5Z"/><path fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h11A1.5 1.5 0 0 1 14 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 0 12.5v-9ZM1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-11Z"/></svg>Restaura a energia</span>
-                        <span class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bandaid text-[var(--cor-destaque)]" viewBox="0 0 16 16"><path d="M11.323 5.135a.5.5 0 0 1 .707 .707l-2.829 2.829a.5.5 0 0 1-.707 0l-2.828-2.829a.5.5 0 0 1 .707-.707L8 6.793l3.323-3.323z"/><path d="M4.677 10.865a.5.5 0 0 1 .707-.707l2.829-2.829a.5.5 0 0 1 .707 0l2.828 2.829a.5.5 0 1 1-.707.707L9 9.207l-1.146 1.147a2.5 2.5 0 0 1-3.536 0L1.493 7.536a2.5 2.5 0 0 1 0-3.536L4.323.177a2.5 2.5 0 0 1 3.536 0L9 1.321l1.146-1.147a2.5 2.5 0 0 1 3.536 0l2.828 2.829a2.5 2.5 0 0 1 0 3.535l-2.828 2.829a2.5 2.5 0 0 1-3.536 0L9 8.207l-1.146 1.147a2.5 2.5 0 0 1-3.536 0z"/></svg>Apoia a cura emocional</span>
-                        <span class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-yin-yang text-[var(--cor-destaque)]" viewBox="0 0 16 16"><path d="M9.167 4.5a1.167 1.167 0 1 1-2.334 0 1.167 1.167 0 0 1 2.334 0Z"/><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1 8a7 7 0 0 1 7-7 3.5 3.5 0 0 1 0 7 3.5 3.5 0 0 0 0 7 7 7 0 0 1-7-7Zm7 4.667a1.167 1.167 0 1 1 0-2.334 1.167 1.167 0 0 1 0 2.334Z"/></svg>Harmoniza os chakras</span>
-                    </div>
-                </div>
-                
-                <div class="text-center">
-                    <a href="https://api.whatsapp.com/send?phone=5566996846674&text=Ol%C3%A1%2C%20Lilian!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20Reiki." target="_blank" class="btn-custom mt-4 inline-block bg-[var(--cor-principal)] text-white font-semibold py-3 px-8 rounded-full text-sm">Agendar Sessão de Reiki</a>
-                </div>
-            </div>
-
-            <div id="baralho-cigano-content" class="hidden text-[var(--cor-secundaria)] space-y-4">
-                 <h3 class="font-playfair text-3xl font-bold text-[var(--cor-principal)] mb-4">Leitura do Baralho Cigano</h3>
-                <p>Uma ferramenta ancestral de autoconhecimento que conecta você à sua própria sabedoria interna, revelando caminhos, desafios e oportunidades.</p>
-                <div>
-                    <h4 class="font-playfair text-xl font-bold text-[var(--cor-principal)] mt-6 mb-2">O que você pode perguntar?</h4>
-                    <ul class="list-disc list-inside text-sm space-y-1 mt-2">
-                        <li>💖 <span class="font-semibold">Amor:</span> Como melhorar a comunicação?</li>
-                        <li>💰 <span class="font-semibold">Carreira:</span> Qual caminho me trará mais realização?</li>
-                        <li>🌀 <span class="font-semibold">Autoconhecimento:</span> Como posso fortalecer minha autoestima?</li>
-                    </ul>
-                </div>
-                <div class="bg-[var(--cor-fundo)]/80 p-6 rounded-lg my-6 text-center">
-                     <h4 class="font-playfair text-xl font-bold text-[var(--cor-principal)] mb-4">Escolha sua Conexão</h4>
-                    <div class="space-y-4 sm:flex sm:justify-center sm:gap-6 sm:space-y-0">
-                        <div class="flex-1">
-                            <p class="font-bold">Pergunta Individual</p>
-                             <p class="text-xs mb-2">(Resposta rápida por mensagem)</p>
-                            <p class="font-bold text-lg">R$ 16,00</p>
-                             <a href="https://api.whatsapp.com/send?phone=5566996846674&text=Ol%C3%A1%2C%20Lilian!%20Gostaria%20de%20fazer%20uma%20Pergunta%20Individual%20com%20o%20Baralho%20Cigano." target="_blank" class="btn-custom mt-2 inline-block bg-[var(--cor-destaque)] text-[var(--cor-principal)] font-semibold py-2 px-6 rounded-full text-sm">Agendar</a>
+            <!-- Card da Calculadora -->
+            <div class="bg-slate-800/80 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden ring-1 ring-white/10">
+                <div class="p-6 sm:p-10">
+                    <form id="contentForm" class="space-y-8">
+                        
+                        <!-- 1. Artes Estáticas -->
+                        <div>
+                            <label for="artes" class="block text-lg font-bold text-white mb-2">
+                                🎨 Artes Estáticas
+                            </label>
+                            <p class="text-sm text-slate-400 mb-3">
+                                A primeira impressão da sua marca. Posts únicos, de alto impacto, criados para capturar a atenção imediata no feed.
+                            </p>
+                            <input type="number" id="artes" name="artes" min="0" placeholder="Quantas?" class="w-full sm:w-48 p-3 text-center text-lg font-semibold border-slate-600 bg-slate-700 text-white rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
                         </div>
-                         <div class="flex-1">
-                            <p class="font-bold">Consulta Online</p>
-                             <p class="text-xs mb-2">(Sessão aprofundada - 30 min)</p>
-                            <p class="font-bold text-lg">R$ 70,00</p>
-                             <a href="https://api.whatsapp.com/send?phone=5566996846674&text=Ol%C3%A1%2C%20Lilian!%20Gostaria%20de%20agendar%20uma%20Consulta%20Online%20de%20Baralho%20Cigano." target="_blank" class="btn-custom mt-2 inline-block bg-[var(--cor-principal)] text-white font-semibold py-2 px-6 rounded-full text-sm">Agendar</a>
+
+                        <!-- 2. Carrosséis -->
+                        <div>
+                            <label for="carrosseis" class="block text-lg font-bold text-white mb-2">
+                                🎠 Carrosséis Estratégicos
+                            </label>
+                            <p class="text-sm text-slate-400 mb-3">
+                                Conecte-se e gere salvamentos. Transformamos sua mensagem em uma história envolvente (até 10 lâminas) que educa, gera autoridade e faz seu público interagir.
+                            </p>
+                            <input type="number" id="carrosseis" name="carrosseis" min="0" placeholder="Quantos?" class="w-full sm:w-48 p-3 text-center text-lg font-semibold border-slate-600 bg-slate-700 text-white rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                        </div>
+
+                        <!-- 3. Vídeos Dinâmicos -->
+                        <div>
+                            <label for="videos" class="block text-lg font-bold text-white mb-2">
+                                🎬 Vídeos (Ciclo Completo)
+                            </label>
+                            <p class="text-sm text-slate-400 mb-3">
+                                A máquina de autoridade. Cuidamos do ciclo completo: criamos o <span class="font-semibold text-white">roteiro</span>, fazemos a <span class="font-semibold text-white">captação</span>, <span class="font-semibold text-white">editamos</span> com foco em retenção e <span class="font-semibold text-white">postamos para você</span>.
+                            </p>
+                            <input type="number" id="videos" name="videos" min="0" placeholder="Quantos?" class="w-full sm:w-48 p-3 text-center text-lg font-semibold border-slate-600 bg-slate-700 text-white rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Mensagem de Progresso (Tratamento visual de "erro") -->
+                <div id="progressMessage" class="p-6 sm:p-10 text-center text-slate-300 font-semibold border-t border-white/10">
+                    Falta pouco! Preencha os 3 campos acima para revelar seu investimento e os bônus que preparamos para você.
+                </div>
+
+                <!-- [AIDA: Desejo e Ação] -->
+                <!-- Área de Resultado (Inicialmente Oculta) -->
+                <div id="resultsSection" class="bg-slate-800 p-6 sm:p-10 border-t border-white/10 smooth-transition max-h-0 opacity-0 transform -translate-y-4 overflow-hidden">
+                    
+                    <!-- Investimento -->
+                    <div class="mb-8 pb-8 border-b border-white/10">
+                        <h2 class="text-lg font-semibold text-slate-300 mb-2 text-center">
+                            Seu Investimento Mensal
+                        </h2>
+                        <p id="totalValue" class="text-5xl font-extrabold text-blue-400 text-center">
+                            R$ 0,00
+                        </p>
+                    </div>
+
+                    <!-- O QUE VOCÊ ESCOLHEU (NOVO) -->
+                    <div class="mb-8" id="summarySection">
+                        <h2 class="text-2xl font-bold text-white text-center mb-6">
+                            Seu Pacote Estratégico
+                        </h2>
+                        <ul class="space-y-3 bg-slate-700/50 p-6 rounded-lg ring-1 ring-slate-600">
+                            <li id="li_artes" class="flex justify-between items-center text-lg"><span class="text-slate-300">🎨 Artes Estáticas</span><span class="font-bold text-white">0</span></li>
+                            <li id="li_carrosseis" class="flex justify-between items-center text-lg"><span class="text-slate-300">🎠 Carrosséis</span><span class="font-bold text-white">0</span></li>
+                            <li id="li_videos" class="flex justify-between items-center text-lg"><span class="text-slate-300">🎬 Vídeos (Ciclo Completo)</span><span class="font-bold text-white">0</span></li>
+                            <li id="li_bonus" class="hidden text-center pt-4 mt-4 border-t border-slate-600"><span id="li_bonus_text" class="font-semibold text-green-400"></span></li>
+                        </ul>
+                    </div>
+
+
+                    <!-- O QUE VOCÊ GANHA (BÔNUS) -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-white text-center mb-6">
+                            🎁 Seus Bônus (Presente da SZ MKT)
+                        </h2>
+                        
+                        <!-- Barra de Progresso de Bônus -->
+                        <div class="w-full bg-slate-700 rounded-full h-4 relative overflow-hidden ring-1 ring-slate-600">
+                            <div id="bonusProgressBar" class="bg-gradient-to-r from-blue-400 to-blue-500 h-4 rounded-full transition-all duration-500 ease-out" style="width: 0%;"></div>
+                        </div>
+                        <div class="flex justify-between text-xs font-medium text-slate-400 mt-2">
+                            <span>R$ 0</span>
+                            <span id="bonusGoal1" class="transition-colors duration-300">Bônus 1: R$ 500</span>
+                            <span id="bonusGoal2" class="text-right transition-colors duration-300">Bônus 2: R$ 750</span>
+                        </div>
+                        <p id="bonusProgressText" class="text-sm text-center text-slate-300 mt-3 font-medium"></p>
+                        
+                        <!-- Bônus Desbloqueado (Mensagem) -->
+                        <div id="bonusBox" class="hidden bg-green-700/20 border border-green-500 text-green-200 p-4 rounded-lg mt-6 transition-all duration-300">
+                            <p id="bonusMessage" class="font-semibold text-center"></p>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div id="ebook-pago-content" class="hidden text-[var(--cor-secundaria)] space-y-4">
-                 <h3 class="font-playfair text-3xl font-bold text-[var(--cor-principal)] mb-2 text-center">Guia de Autoconhecimento</h3>
-                 <p class="font-cinzel text-lg text-center mb-4">Desbloqueie o Poder da Sua Verdadeira Essência</p>
-                 <img src="https://i.ibb.co/31jM70h/ebook-cover-final.jpg" alt="[Capa do e-book 'Guia de Autoconhecimento']" class="rounded-lg shadow-lg mx-auto max-w-xs w-full">
-                 <p class="text-center pt-4">Um guia prático para transformar crenças limitantes, liberar o peso do passado e construir uma relação de amor e aceitação com você mesma(o).</p>
 
-                 <div class="bg-[var(--cor-fundo)]/80 p-6 rounded-lg my-6">
-                    <h4 class="font-playfair text-xl font-bold text-center text-[var(--cor-principal)] mb-4">O que você vai aprender:</h4>
-                    <ul class="list-disc list-inside text-sm space-y-2">
-                        <li>Identificar e transformar crenças que te impedem de crescer.</li>
-                        <li>Usar o perdão como chave para sua liberdade emocional.</li>
-                        <li>Construir uma relação mais saudável e autêntica com você.</li>
-                    </ul>
-                 </div>
+                    <!-- Detalhes do Pacote (Secundário, mas importante) -->
+                    <div class="space-y-5 mb-10">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.25a2.25 2.25 0 01-2.25-2.25v-2.5a2.25 2.25 0 012.25-2.25h1.383z" /></svg>
+                            <div>
+                                <h3 class="font-semibold text-white">Captação Profissional</h3>
+                                <p id="captacaoInfo" class="text-slate-300 text-sm">Sessão de captação mensal inclusa.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625a3.375 3.375 0 00-3.375 3.375v11.25a3.375 3.375 0 003.375 3.375h12.75a3.375 3.375 0 003.375-3.375V10.5m-10.5-4.875h.008v.008H10.5v-.008z" /></svg>
+                            <div>
+                                <h3 class="font-semibold text-white">Contrato</h3>
+                                <p class="text-slate-300 text-sm">Fidelidade de 6 meses para garantir resultados consistentes.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                 <div class="text-center bg-[var(--cor-principal)] text-[var(--cor-texto-claro)] p-8 rounded-2xl shadow-lg">
-                    <p class="line-through opacity-70">De R$97,00</p>
-                    <p class="text-3xl font-bold text-[var(--cor-destaque)]">Por R$39,90</p>
-                    <a href="https://pay.hotmart.com/R97094028X" target="_blank" class="btn-custom mt-4 inline-block bg-white text-[var(--cor-principal)] font-bold py-3 px-10 rounded-full shadow-lg hover:bg-opacity-95 tracking-wide">
-                        COMPRAR GUIA AGORA
-                    </a>
+                    <!-- Ação: Botão WhatsApp -->
+                    <div>
+                        <a id="whatsappButton" href="#" target="_blank" class="w-full flex items-center justify-center gap-x-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-5 rounded-lg shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 transform hover:scale-105">
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.687-1.448L.057 24zM7.003 20.218c1.771 1.005 3.82 1.523 5.898 1.523 5.454 0 9.881-4.425 9.882-9.879s-4.428-9.879-9.882-9.879-9.879 4.428-9.879 9.879c0 2.021.57 3.96 1.632 5.705l-1.03 3.747 3.826-1.003zm3.807-3.232c-.372-.187-.545-.187-1.099.187-.491.332-1.053.935-1.291 1.17-.22.215-.436.287-.847.105s-1.711-.616-3.255-2.007c-1.21-1.076-2.126-2.438-2.384-2.858-.258-.42-.012-.646.175-.833.167-.17.371-.417.558-.591.162-.15.243-.25.364-.417.144-.186.12-.347.043-.534-.09-.187-.847-2.048-1.162-2.808-.29-.713-.594-.616-.847-.616h-.417c-.243 0-.66.12-1.023.534-.372.417-1.416 1.377-1.416 3.347s1.448 3.883 1.632 4.148c.186.266 2.78 4.239 6.716 5.972.992.428 1.748.687 2.353.868.76.216 1.45.144 1.996-.12.607-.287 1.76-1.03 2.048-1.385.287-.347.287-.66.186-.847-.09-.187-.417-.347-.847-.534z"/>
+                            </svg>
+                            <span class="text-lg">Quero Iniciar Minha Transformação!</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
         </div>
-    </div>
+    </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const journeyButtons = document.querySelectorAll('.journey-button');
-            const modal = document.getElementById('info-modal');
-            const closeModalBtn = document.getElementById('close-modal');
-            const contentDivs = modal.querySelectorAll('#modal-content > div');
+        // --- Seletores do DOM ---
+        const artQty = document.getElementById('artes');
+        const carouselQty = document.getElementById('carrosseis');
+        const videoQty = document.getElementById('videos');
 
-            const openModal = (journeyKey) => {
-                contentDivs.forEach(div => div.classList.add('hidden'));
+        const progressMessage = document.getElementById('progressMessage');
+        const resultsSection = document.getElementById('resultsSection');
+        const totalValueEl = document.getElementById('totalValue');
+        
+        const bonusProgressBar = document.getElementById('bonusProgressBar');
+        const bonusProgressText = document.getElementById('bonusProgressText');
+        const bonusGoal1 = document.getElementById('bonusGoal1');
+        const bonusGoal2 = document.getElementById('bonusGoal2');
+        
+        const bonusBox = document.getElementById('bonusBox');
+        const bonusMessageEl = document.getElementById('bonusMessage'); // Usará .innerHTML
+        
+        const captacaoInfoEl = document.getElementById('captacaoInfo');
+        const whatsappButton = document.getElementById('whatsappButton');
 
-                const targetContent = document.getElementById(`${journeyKey}-content`);
-                if (targetContent) {
-                    targetContent.classList.remove('hidden');
-                }
+        // --- Seletores da Lista de Resumo (NOVO) ---
+        const li_artes = document.getElementById('li_artes');
+        const li_carrosseis = document.getElementById('li_carrosseis');
+        const li_videos = document.getElementById('li_videos');
+        const li_bonus = document.getElementById('li_bonus');
+        const li_bonus_text = document.getElementById('li_bonus_text');
+        
+        // --- Configurações ---
+        const phoneNumber = '556692654359'; // Número de WhatsApp (Formato internacional)
+        const ART_PRICE = 40.00;
+        const BONUS_1_THRESHOLD = 500;
+        const BONUS_2_THRESHOLD = 750;
 
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.classList.add('active', 'opacity-100');
-                    document.body.style.overflow = 'hidden'; // Impede o scroll do fundo
-                }, 10);
-            };
-
-            const closeModal = () => {
-                modal.classList.remove('opacity-100', 'active');
-                 document.body.style.overflow = ''; // Libera o scroll
-                setTimeout(() => modal.classList.add('hidden'), 300);
-            };
-
-            journeyButtons.forEach(button => button.addEventListener('click', () => openModal(button.dataset.journey)));
-            closeModalBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+        // --- Event Listeners ---
+        [artQty, carouselQty, videoQty].forEach(input => {
+            input.addEventListener('input', calculateTotal);
         });
+
+        // --- Função Principal de Cálculo ---
+        function calculateTotal() {
+            const arts = parseInt(artQty.value || '0', 10);
+            const carousels = parseInt(carouselQty.value || '0', 10);
+            const videos = parseInt(videoQty.value || '0', 10);
+
+            // Verifica se TODOS os campos foram preenchidos
+            const allFilled = artQty.value !== '' && carouselQty.value !== '' && videoQty.value !== '';
+
+            // --- Lógica de Preço Progressivo ---
+            const carouselTotal = getCarouselTotal(carousels);
+            const videoTotal = getVideoTotal(videos);
+            const artTotal = arts * ART_PRICE;
+            const total = artTotal + carouselTotal + videoTotal;
+
+            // --- Lógica de Exibição (Controla o que o usuário vê) ---
+            if (!allFilled) {
+                // Esconde resultados, mostra progresso
+                resultsSection.classList.add('max-h-0', 'opacity-0', '-translate-y-4');
+                resultsSection.classList.remove('max-h-[1500px]', 'opacity-100', 'translate-y-0');
+                progressMessage.classList.remove('hidden');
+                return;
+            }
+
+            // Mostra resultados, esconde progresso
+            resultsSection.classList.remove('max-h-0', 'opacity-0', '-translate-y-4');
+            resultsSection.classList.add('max-h-[1500px]', 'opacity-100', 'translate-y-0'); // max-h-[1500px] para garantir espaço
+            progressMessage.classList.add('hidden');
+            
+            // Atualiza o valor
+            totalValueEl.textContent = `R$ ${formatCurrency(total)}`;
+
+            // --- Lógica da Barra de Bônus ---
+            updateBonusBar(total, arts, carousels, videos);
+
+            // --- Lógica de Bônus (Mensagens) ---
+            let bonusDisplayHTML = ''; // Para a página (com HTML)
+            let bonusWhatsappText = 'Nenhum bônus por enquanto'; // Para o WhatsApp (texto puro)
+
+            if (total >= BONUS_2_THRESHOLD) {
+                bonusDisplayHTML = `🎉 Parabéns! Você ganhou TUDO:<br><strong>10 Fotos Profissionais</strong> + <strong>1 Reels Gratuito</strong> + <strong>Bio Personalizada (Mini-Site)</strong>!`;
+                bonusWhatsappText = '10 Fotos Profissionais + 1 Reels Gratuito + Bio Personalizada (Mini-Site)';
+            } else if (total >= BONUS_1_THRESHOLD) {
+                bonusDisplayHTML = `🎉 Você ganhou! <strong>10 Fotos Profissionais</strong> de presente!`;
+                bonusWhatsappText = '10 Fotos Profissionais';
+            }
+
+            if (total >= BONUS_1_THRESHOLD) {
+                bonusMessageEl.innerHTML = bonusDisplayHTML;
+                bonusBox.classList.remove('hidden');
+            } else {
+                bonusBox.classList.add('hidden');
+            }
+
+            // --- Atualiza Lista de Resumo (NOVO) ---
+            updateSummaryList(arts, carousels, videos, bonusWhatsappText);
+
+            // --- Lógica de Captação (Info) ---
+            let captacaoText = "Não aplicável (sem vídeos)";
+            if (videos > 0) captacaoText = "1 sessão mensal (gravação em 1 dia).";
+            if (videos > 4) captacaoText = "1 sessão mensal (gravação em até 3 dias).";
+            captacaoInfoEl.textContent = captacaoText;
+
+            // --- Geração da Mensagem WhatsApp ---
+            updateWhatsAppLink(arts, carousels, videos, total, bonusWhatsappText, captacaoText);
+        }
+
+        // --- Funções Auxiliares ---
+        
+        function updateBonusBar(total, arts, carousels, videos) {
+            const maxBonus = BONUS_2_THRESHOLD;
+            let progressPercent = (total / maxBonus) * 100;
+            if (progressPercent > 100) progressPercent = 100;
+            
+            bonusProgressBar.style.width = `${progressPercent}%`;
+
+            // Reseta cores
+            bonusGoal1.classList.remove('text-green-400', 'font-bold');
+            bonusGoal2.classList.remove('text-green-400', 'font-bold');
+
+            // Lógica de Upsell (NOVO)
+            const costToAddArt = ART_PRICE;
+            const costToAddCarousel = getCarouselTotal(carousels + 1) - getCarouselTotal(carousels);
+            const costToAddVideo = getVideoTotal(videos + 1) - getVideoTotal(videos);
+
+            if (total < BONUS_1_THRESHOLD) {
+                const diffToBonus1 = BONUS_1_THRESHOLD - total;
+                let upsellMessage = `Faltam R$ ${formatCurrency(diffToBonus1)} para o Bônus 1 (10 fotos)!`;
+
+                // Tenta encontrar o upsell mais barato
+                const upsells = [
+                    { name: '+1 Arte', cost: costToAddArt, unlocks: total + costToAddArt >= BONUS_1_THRESHOLD },
+                    { name: '+1 Carrossel', cost: costToAddCarousel, unlocks: total + costToAddCarousel >= BONUS_1_THRESHOLD },
+                    { name: '+1 Vídeo', cost: costToAddVideo, unlocks: total + costToAddVideo >= BONUS_1_THRESHOLD }
+                ].filter(u => u.unlocks).sort((a, b) => a.cost - b.cost);
+
+                if (upsells.length > 0) {
+                    upsellMessage = `Adicione ${upsells[0].name} e ganhe 10 Fotos Pro!`;
+                }
+                bonusProgressText.textContent = upsellMessage;
+
+            } else if (total >= BONUS_1_THRESHOLD && total < BONUS_2_THRESHOLD) {
+                const diffToBonus2 = BONUS_2_THRESHOLD - total;
+                let upsellMessage = `Bônus 1 atingido! Faltam R$ ${formatCurrency(diffToBonus2)} para o Bônus 2 (Bio Site)!`;
+                bonusGoal1.classList.add('text-green-400', 'font-bold');
+
+                // Tenta encontrar o upsell mais barato para o bônus 2
+                const upsells = [
+                    { name: '+1 Arte', cost: costToAddArt, unlocks: total + costToAddArt >= BONUS_2_THRESHOLD },
+                    { name: '+1 Carrossel', cost: costToAddCarousel, unlocks: total + costToAddCarousel >= BONUS_2_THRESHOLD },
+                    { name: '+1 Vídeo', cost: costToAddVideo, unlocks: total + costToAddVideo >= BONUS_2_THRESHOLD }
+                ].filter(u => u.unlocks).sort((a, b) => a.cost - b.cost);
+                
+                if (upsells.length > 0) {
+                    upsellMessage = `Bônus 1 atingido! Adicione ${upsells[0].name} e ganhe a Bio Site!`;
+                }
+                bonusProgressText.textContent = upsellMessage;
+
+            } else if (total >= BONUS_2_THRESHOLD) {
+                bonusProgressText.textContent = `Todos os bônus desbloqueados! Você atingiu o nível máximo!`;
+                bonusGoal1.classList.add('text-green-400', 'font-bold');
+                bonusGoal2.classList.add('text-green-400', 'font-bold');
+            }
+        }
+
+        // --- Funções de Cálculo Refatoradas (NOVO) ---
+        function getCarouselTotal(count) {
+            let carouselUnitCost = 80.00;
+            if (count === 0) return 0;
+            if (count === 1) carouselUnitCost = 80.00;
+            else if (count === 2) carouselUnitCost = 75.00;
+            else if (count === 3) carouselUnitCost = 70.00;
+            else if (count >= 4) carouselUnitCost = 67.00;
+            return count * carouselUnitCost;
+        }
+
+        function getVideoTotal(count) {
+            let videoUnitCost = 135.00;
+            if (count === 0) return 0;
+            if (count === 1) videoUnitCost = 135.00;
+            else if (count === 2) videoUnitCost = 130.00;
+            else if (count === 3) videoUnitCost = 125.00;
+            else if (count >= 4) videoUnitCost = 120.00;
+            return count * videoUnitCost;
+        }
+
+        // --- Função de Resumo (NOVO) ---
+        function updateSummaryList(arts, carousels, videos, bonusText) {
+            // Atualiza contagens
+            li_artes.querySelector('span:last-child').textContent = arts;
+            li_carrosseis.querySelector('span:last-child').textContent = carousels;
+            li_videos.querySelector('span:last-child').textContent = videos;
+
+            // Mostra/Esconde itens zerados
+            li_artes.classList.toggle('hidden', arts === 0);
+            li_carrosseis.classList.toggle('hidden', carousels === 0);
+            li_videos.classList.toggle('hidden', videos === 0);
+
+            // Atualiza Bônus
+            if (bonusText !== 'Nenhum bônus por enquanto') {
+                li_bonus_text.textContent = `🎁 Bônus: ${bonusText}`;
+                li_bonus.classList.remove('hidden');
+            } else {
+                li_bonus.classList.add('hidden');
+            }
+        }
+
+
+        function updateWhatsAppLink(arts, carousels, videos, total, bonusText, captacaoText) {
+            const baseMessage = `Olá, SZ MKT! Montei meu pacote estratégico na calculadora e quero iniciar minha transformação.
+
+Meu Plano:
+📦 ${arts} ${arts === 1 ? 'Arte Estática' : 'Artes Estáticas'}
+🎠 ${carousels} ${carousels === 1 ? 'Carrossel' : 'Carrosséis'}
+🎬 ${videos} ${videos === 1 ? 'Vídeo' : 'Vídeos'}
+
+Resumo do Pacote:
+💰 Investimento: R$ ${formatCurrency(total)}
+🎁 Bônus Conquistado: ${bonusText}
+🎥 Captação: ${captacaoText}
+📝 Contrato: 6 meses
+
+Aguardo os próximos passos!`;
+            
+            const encodedMessage = encodeURIComponent(baseMessage);
+            whatsappButton.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        }
+
+        function formatCurrency(value) {
+            return value.toFixed(2).replace('.', ',');
+        }
+
+        // --- Inicialização ---
+        calculateTotal(); // Chama no início para configurar o estado inicial (tudo oculto)
+
     </script>
 </body>
 </html>
